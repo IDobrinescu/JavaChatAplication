@@ -9,16 +9,14 @@ public class ChatClient {
     private ObjectOutputStream objectOutputStream;
     public MesageHandler mesageHandler;
 
-    private String cmd;
 
     public ChatClient(String localhost, int port, MesageHandler mesageHandler) throws IOException {
         this.serverName = localhost;
         this.serverPort = port;
         this.mesageHandler = mesageHandler;
-        this.cmd = "";
     }
 
-    public static void main(String[] args) throws IOException, InterruptedException {
+    public static void main(String[] args) throws IOException {
         ChatClient chatClient = new ChatClient("localhost", 8818, null);
         if(chatClient.connect()){
             System.out.println("Client connected successfully");
@@ -26,7 +24,6 @@ public class ChatClient {
             chatClient.send("test");
 
             chatClient.send("init");
-            chatClient.cmd = "init";
         } else {
             System.out.println("Error occurred when connecting to server");
         }
@@ -46,35 +43,17 @@ public class ChatClient {
         return false;
     }
 
-//    public void handleMessageReceived(){
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(this.serverInStream));
-//        Thread thread = new Thread(() -> {
-//            try {
-//                String line;
-//                while ((line = bufferedReader.readLine()) != null) {
-//                    System.out.println(line);
-//                    if(this.mesageHandler!= null){
-//                        this.mesageHandler.onMesageReceived(line);
-//                    }
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        });
-//        thread.start();
-//    }
-
     public void handleMessageReceived1(){
         Thread thread = new Thread(() -> {
             try {
                 while (true){
-                    switch (cmd){
+                    String line = (String) objectInputStream.readObject();
+                    switch (line){
                         case "init":
                             receiveAvailableChannels();
                             break;
 
                         default:
-                            String line = (String) objectInputStream.readObject();
                             System.out.println(line);
                             if(this.mesageHandler!= null){
                                 this.mesageHandler.onMesageReceived(line);
@@ -94,6 +73,9 @@ public class ChatClient {
     public void receiveAvailableChannels() {
         try {
             ArrayList<String> arr = (ArrayList<String>) objectInputStream.readObject();
+            if(this.mesageHandler!=null) {
+                this.mesageHandler.onArrayReceived(arr);
+            }
             printArray(arr);
         } catch (IOException e) {
             e.printStackTrace();

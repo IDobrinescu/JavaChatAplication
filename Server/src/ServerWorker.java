@@ -91,21 +91,26 @@ public class ServerWorker extends Thread {
         }
 
     private void sendAvailableChannels() throws IOException {
-//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(this.outputStream);
-        ArrayList<String> data = new ArrayList<>();
-//        for(ServerWorker worker:this.server.getWorkers()){
-//            data.add(worker.name);
-//        }
-//        data.addAll(groupsHash);
-        data.add("Tesst");
-        objectOutputStream.writeObject(data);
+        objectOutputStream.writeObject("init");
 
-        System.out.println("Server wrote data");
-        System.out.println("Server flushed data");
+        ArrayList<String> data = new ArrayList<>();
+        for(ServerWorker worker:this.server.getWorkers()){
+            if(this.name != worker.name) {
+                data.add(worker.name);
+            }
+        }
+        data.addAll(groupsHash);
+//        data.add("Tesst");
+        objectOutputStream.writeObject(data);
     }
 
     private void joinGroup(String token) {
         this.groupsHash.add(token);
+        try {
+            sendAvailableChannels();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void send(String msg) throws IOException {
@@ -127,6 +132,7 @@ public class ServerWorker extends Thread {
                 for(ServerWorker worker:this.server.getWorkers()){
                     if(worker != this){
                         worker.send(this.name + " is now connected");
+                        worker.sendAvailableChannels();
                     }
                 }
                 break;

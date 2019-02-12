@@ -32,10 +32,10 @@
         </constraints>
         <properties/>
       </component>
-      <component id="28963" class="javax.swing.JTextArea" binding="usersArea">
+      <component id="93b51" class="javax.swing.JList" binding="list1" default-binding="true">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="2" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="50" height="50"/>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
           </grid>
         </constraints>
         <properties/>
