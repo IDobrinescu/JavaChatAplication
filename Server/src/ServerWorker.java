@@ -1,11 +1,16 @@
 import java.io.*;
+import java.lang.reflect.Array;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class ServerWorker extends Thread {
     private final Socket socket;
-    private final InputStream inputStream;
-    private final OutputStream outputStream;
+//    private final InputStream inputStream;
+//    private final OutputStream outputStream;
+    private ObjectOutputStream objectOutputStream;
+    private ObjectInputStream objectInputStream;
     private final Server server;
     private String name;
     private HashSet<String> groupsHash;
@@ -13,20 +18,52 @@ public class ServerWorker extends Thread {
     public ServerWorker(Server server, Socket socket) throws IOException {
         this.server = server;
         this.socket = socket;
-        this.inputStream = socket.getInputStream();
-        this.outputStream = socket.getOutputStream();
+//        this.inputStream = socket.getInputStream();
+//        this.outputStream = socket.getOutputStream();
         this.groupsHash = new HashSet<>();
+        this.objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+        this.objectInputStream = new ObjectInputStream(socket.getInputStream());
     }
 
-    @Override
+//    @Override
+//    public void run() {
+//        try {
+//            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(this.inputStream));
+//
+//            this.checkForUsername(bufferedReader);
+//
+//            String line;
+//            while((line = bufferedReader.readLine())!= null){
+//                String[] tokens = line.split(" ",3);
+//                if(tokens[0].equalsIgnoreCase("exit")){
+//                    break;
+//                }else if(tokens[0].equalsIgnoreCase("msg")){
+//                    if(tokens[1].charAt(0)=='#'){
+//                        sendGroupeMsg(tokens);
+//                    }else{
+//                        sendPrivateMsg(tokens);
+//                    }
+//                }else if(tokens[0].equalsIgnoreCase("join")){
+//                    joinGroup(tokens[1]);
+//                } else if(tokens[0].equalsIgnoreCase("init")) {
+//                    sendAvailableChannels();
+//                }
+//            }
+//            socket.close();
+//            this.server.removeWorker(this);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        @Override
     public void run() {
         try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(this.inputStream));
 
-            this.checkForUsername(bufferedReader);
+            this.checkForUsername();
 
-            String line;
-            while((line = bufferedReader.readLine())!= null){
+            while (true){
+//                String line = objectInputStream.readUTF();
+                String line = (String) objectInputStream.readObject();
                 String[] tokens = line.split(" ",3);
                 if(tokens[0].equalsIgnoreCase("exit")){
                     break;
@@ -38,14 +75,33 @@ public class ServerWorker extends Thread {
                     }
                 }else if(tokens[0].equalsIgnoreCase("join")){
                     joinGroup(tokens[1]);
+                } else if(tokens[0].equalsIgnoreCase("init")) {
+                    sendAvailableChannels();
                 }
             }
             socket.close();
+            System.out.println("Socket was closed");
             this.server.removeWorker(this);
 
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+        }
+
+    private void sendAvailableChannels() throws IOException {
+//        ObjectOutputStream objectOutputStream = new ObjectOutputStream(this.outputStream);
+        ArrayList<String> data = new ArrayList<>();
+//        for(ServerWorker worker:this.server.getWorkers()){
+//            data.add(worker.name);
+//        }
+//        data.addAll(groupsHash);
+        data.add("Tesst");
+        objectOutputStream.writeObject(data);
+
+        System.out.println("Server wrote data");
+        System.out.println("Server flushed data");
     }
 
     private void joinGroup(String token) {
@@ -53,14 +109,15 @@ public class ServerWorker extends Thread {
     }
 
     public void send(String msg) throws IOException {
-        this.outputStream.write((msg + "\n").getBytes());
+        this.objectOutputStream.writeObject((msg + "\n"));
     }
 
-    public void checkForUsername(BufferedReader bufferedReader) throws IOException {
+    public void checkForUsername() throws IOException, ClassNotFoundException {
         this.send("Please enter a username");
 
-        String line;
-        while((line = bufferedReader.readLine())!= null) {
+        while (true){
+//            String line = objectInputStream.readUTF();
+            String line = (String) objectInputStream.readObject();
             String[] words = line.split(" ");
             this.name = words[0];
             if(name.isEmpty()){
