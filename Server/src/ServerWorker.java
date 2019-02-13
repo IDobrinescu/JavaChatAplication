@@ -1,3 +1,4 @@
+import javax.sound.midi.Soundbank;
 import java.io.*;
 import java.lang.reflect.Array;
 import java.net.Socket;
@@ -75,13 +76,20 @@ public class ServerWorker extends Thread {
                     }
                 }else if(tokens[0].equalsIgnoreCase("join")){
                     joinGroup(tokens[1]);
+                }else if(tokens[0].equalsIgnoreCase("leave")){
+                    leaveGroup(tokens[1]);
                 } else if(tokens[0].equalsIgnoreCase("init")) {
                     sendAvailableChannels();
+                } else if(tokens[0].equalsIgnoreCase("sendFile")) {
+                    sendFile(tokens);
                 }
             }
-            socket.close();
             System.out.println("Socket was closed");
             this.server.removeWorker(this);
+            for(ServerWorker worker:this.server.getWorkers()) {
+                worker.sendAvailableChannels();
+            }
+            socket.close();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -89,6 +97,40 @@ public class ServerWorker extends Thread {
             e.printStackTrace();
         }
         }
+
+    private void leaveGroup(String token) {
+        this.groupsHash.remove(token);
+        try {
+            sendAvailableChannels();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void sendFile(String[] tokens) throws IOException {
+        byte[] byteArray = null;
+        try {
+            byteArray = (byte[])this.objectInputStream.readObject();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("server send file");
+        System.out.println(tokens[1]);
+        System.out.println(tokens[2]);
+
+        for(ServerWorker worker:this.server.getWorkers()){
+            if(worker.name.equalsIgnoreCase(tokens[1]) ||
+                    (worker.groupsHash.contains(tokens[1])&&!worker.name.equalsIgnoreCase(this.name))) {
+                worker.objectOutputStream.writeObject("sendFile");
+                worker.objectOutputStream.writeObject(byteArray);
+                worker.objectOutputStream.writeObject(tokens[2]);
+
+            }
+        }
+//        objectOutputStream.writeObject("sendFile");
+//        this.objectOutputStream.writeObject(byteArray);
+    }
 
     private void sendAvailableChannels() throws IOException {
         objectOutputStream.writeObject("init");

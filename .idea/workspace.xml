@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Client:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="82553769-3cd9-4763-a567-499815e1840e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/ChatClientView.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/ChatClientView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Client/src/MesageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/ChatClientView.form" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClientView.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/ChatClientView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClientView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/MesageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/com/ionut/chat/MesageHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Server/src/ServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Server/src/ServerWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Client/ChatClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Client/ChatClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ChatClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/ChatClientView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Client/MesageHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Server/ServerWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Server/ServerWorker.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -24,33 +29,36 @@
     <session id="2056156922">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="form" value="1" />
-          <entry key="java" value="9" />
+          <entry key="MF" value="1" />
+          <entry key="form" value="2" />
+          <entry key="java" value="12" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="GUI_DESIGNER_FORM" value="1" />
-          <entry key="JAVA" value="9" />
+          <entry key="GUI_DESIGNER_FORM" value="2" />
+          <entry key="JAVA" value="12" />
+          <entry key="Manifest" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="4134" />
+          <entry key="java" value="6418" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4134" />
+          <entry key="JAVA" value="6418" />
         </counts>
       </usages-collector>
     </session>
@@ -72,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/src/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
+            <state relative-caret-position="120">
               <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -83,11 +91,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Server/src/ServerWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-98">
-              <caret line="102" column="48" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="48" />
+            <state relative-caret-position="233">
+              <caret line="123" column="104" lean-forward="true" selection-start-line="123" selection-start-column="104" selection-end-line="123" selection-end-column="104" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,10 +104,39 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/ChatClient.java">
+        <entry file="file://$PROJECT_DIR$/Client/src/com/ionut/chat/MesageHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+            <state relative-caret-position="120">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClientView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="129" column="68" selection-start-line="129" selection-start-column="68" selection-end-line="129" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1997#2226#0" expanded="true" />
+                <element signature="e#2225#2226#0" expanded="true" />
+                <element signature="e#2650#3069#0" expanded="true" />
+                <element signature="e#3068#3069#0" expanded="true" />
+                <element signature="e#3575#3576#0" expanded="true" />
+                <element signature="e#3622#3623#0" expanded="true" />
+                <element signature="e#4099#4100#0" expanded="true" />
+                <element signature="e#4177#4178#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1520">
+              <caret line="142" column="30" selection-start-line="142" selection-start-column="30" selection-end-line="142" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,15 +145,8 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Client/src/ChatClientView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClientView.form">
+          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
     </leaf>
@@ -138,6 +168,7 @@
       <find>read</find>
       <find>send</find>
       <find>objectInputStream</find>
+      <find>mesageHandler</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,11 +179,15 @@
       <list>
         <option value="$PROJECT_DIR$/Server/src/ServerMain.java" />
         <option value="$PROJECT_DIR$/Server/src/Server.java" />
-        <option value="$PROJECT_DIR$/Client/src/MesageHandler.java" />
         <option value="$PROJECT_DIR$/Client/src/ChatClientView.form" />
         <option value="$PROJECT_DIR$/Client/src/ChatClientView.java" />
-        <option value="$PROJECT_DIR$/Server/src/ServerWorker.java" />
         <option value="$PROJECT_DIR$/Client/src/ChatClient.java" />
+        <option value="$PROJECT_DIR$/Client/src/MesageHandler.java" />
+        <option value="$PROJECT_DIR$/Client/src/com/ionut/chat/MesageHandler.java" />
+        <option value="$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClientView.form" />
+        <option value="$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClient.java" />
+        <option value="$PROJECT_DIR$/Server/src/ServerWorker.java" />
+        <option value="$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClientView.java" />
       </list>
     </option>
   </component>
@@ -163,13 +198,13 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="34" />
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="804" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="PackagesPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -206,20 +241,52 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ChatApplication" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Client" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="ChatApplication" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Client" type="616d4139:PackageViewModuleNode" />
+              <item name="com.ionut.chat" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="ChatApplication" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Client" type="616d4139:PackageViewModuleNode" />
+              <item name="com.ionut.chat" type="1f31426a:PackageElementNode" />
+              <item name="ChatClientView" type="e9f4de52:FormNode" />
+            </path>
+            <path>
+              <item name="ChatApplication" type="58d84e3e:PackageViewProjectNode" />
+              <item name="Server" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="mesa&#9;FILE&#9;file:///Users/ionutdobrinescu/Stuff/Master/ChatApplication/Client/src/MesageHandler.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549988221352" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550072989961" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/Client/src" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Client/src/com/ionut/chat" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -233,10 +300,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ChatClient">
+  <component name="RunManager" selected="Application.ChatClientView (1)">
     <configuration name="ChatClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ChatClient" />
       <module name="Client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChatClientView (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ionut.chat.ChatClientView" />
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ionut.chat.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -259,11 +339,13 @@
       <item itemvalue="Application.ServerMain" />
       <item itemvalue="Application.ChatClient" />
       <item itemvalue="Application.ChatClientView" />
+      <item itemvalue="Application.ChatClientView (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ChatClient" />
+        <item itemvalue="Application.ChatClientView (1)" />
         <item itemvalue="Application.ServerMain" />
+        <item itemvalue="Application.ChatClient" />
         <item itemvalue="Application.ChatClientView" />
       </list>
     </recent_temporary>
@@ -280,18 +362,21 @@
       <updated>1549731248915</updated>
       <workItem from="1549731250144" duration="717000" />
       <workItem from="1549733423129" duration="23412000" />
-      <workItem from="1549985235369" duration="1950000" />
+      <workItem from="1549985235369" duration="3196000" />
+      <workItem from="1549997598226" duration="5271000" />
+      <workItem from="1550004965441" duration="1743000" />
+      <workItem from="1550048169930" duration="10894000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26079000" />
+    <option name="totallyTimeSpent" value="45233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="804" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26752505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -300,7 +385,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286517" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44101125" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988764" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -331,20 +416,20 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/ChatClientView.java</url>
-          <line>15</line>
+          <url>file://$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClientView.java</url>
+          <line>27</line>
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Server/src/ServerWorker.java</url>
-          <line>48</line>
+          <line>49</line>
           <properties />
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Server/src/ServerWorker.java</url>
-          <line>93</line>
+          <line>134</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -359,10 +444,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/MesageHandler.java">
+    <entry file="file://$PROJECT_DIR$/Client/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
@@ -376,9 +461,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/com/ionut/chat/MesageHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
+        <state relative-caret-position="120">
           <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -388,23 +480,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/ChatClientView.form">
+    <entry file="file://$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClientView.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/ChatClientView.java">
+    <entry file="file://$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/ChatClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+        <state relative-caret-position="1520">
+          <caret line="142" column="30" selection-start-line="142" selection-start-column="30" selection-end-line="142" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -413,10 +495,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Server/src/ServerWorker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-98">
-          <caret line="102" column="48" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="48" />
+        <state relative-caret-position="233">
+          <caret line="123" column="104" lean-forward="true" selection-start-line="123" selection-start-column="104" selection-end-line="123" selection-end-column="104" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/com/ionut/chat/ChatClientView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="129" column="68" selection-start-line="129" selection-start-column="68" selection-end-line="129" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1997#2226#0" expanded="true" />
+            <element signature="e#2225#2226#0" expanded="true" />
+            <element signature="e#2650#3069#0" expanded="true" />
+            <element signature="e#3068#3069#0" expanded="true" />
+            <element signature="e#3575#3576#0" expanded="true" />
+            <element signature="e#3622#3623#0" expanded="true" />
+            <element signature="e#4099#4100#0" expanded="true" />
+            <element signature="e#4177#4178#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -427,10 +527,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>Client:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

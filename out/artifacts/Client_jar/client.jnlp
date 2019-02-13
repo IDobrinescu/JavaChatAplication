@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+">
+    <information>
+        <title>Random Number</title>
+        <vendor>Random Number</vendor>
+    </information>
+    <resources>
+        <!-- Application Resources -->
+        <j2se version="1.7+"
+              href="http://java.sun.com/products/autodl/j2se"/>
+        <jar href="Client.jar"
+             main="true" />
+  </resources>
+
+    <security>
+        <all-permissions/>
+    </security>
+
+    <application-desc
+            name="Random Number"
+            main-class=
+                    "com.ionut.chat.ChatClientView"
+            width="300"
+            height="300">
+    </application-desc>
+    <update check="background"/>
+</jnlp>
